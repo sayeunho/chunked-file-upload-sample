@@ -1,17 +1,14 @@
-# Sample application for chunked file upload
-[![Build Status](https://travis-ci.org/edsoncunha/chunked-file-upload-sample.svg?branch=master)](https://travis-ci.org/edsoncunha/chunked-file-upload-sample)
-[![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+# 청크 파일 업로드를 위한 예제
 
-An example to demonstrate chunked file uploading to a Java server. The client uses [Resumable.js](https://github.com/23/resumable.js), which in turn uses HTML 5 file API to generate the chunks.
+Java 서버에 청크 파일 업로드를 보여주는 예제. 클라이언트가 사용하는 [Resumable.js](https://github.com/23/resumable.js), HTML 5 파일 API를 사용하여 청크를 생성합니다.
 
-A .NET Core version is also available: [https://github.com/edsoncunha/chunked-file-upload-csharp](https://github.com/edsoncunha/chunked-file-upload-csharp).
 
 ## Client
 
-Requirements:
+요구사항:
 - [Node.js](https://nodejs.org/en/download/package-manager/)
 
-To install dependencies and run:
+실행과정:
 
     cd client
     npm install
@@ -22,35 +19,15 @@ Then browse to [localhost:3000](http://localhost:3000).
 
 ## Server
 
-To install and run:
+실행과정:
 
     cd server
-    ./mvnw package jetty:run
+    ./mvnw package jetty:run(./run_all.sh)
     
 Then browse to [localhost:8002](http://localhost:8002).
 
 ...
 
 
-Or simply cross your fingers and run both at once with:
-
-    ./run_all.sh
 
 
-### Suggestion for test
-
-Generate large files
-
-    dd if=/dev/urandom of=file.tmp bs=1M count=1024 #creates a 1GB file
-
-Calculate SHA1 
-
-    sha1sum file.tmp
-
-Upload file.tmp, download it from server and check whether the checksums match
-
-
-# Acknowledgements
-
-This sample takes [Resumable.js](https://github.com/23/resumable.js) and [Swagger code samples](https://github.com/swagger-api/swagger-samples) as a frame of reference.
-# chunked-file-upload-sample
